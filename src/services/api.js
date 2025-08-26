@@ -33,25 +33,25 @@ const apiRequest = async (endpoint, options = {}) => {
 // Auth API
 export const authAPI = {
   login: async (email, password) => {
-    return apiRequest('/auth/login', {
+    return apiRequest('/api/auth/login', {
       method: 'POST',
       body: JSON.stringify({ email, password })
     });
   },
   
   verify: async () => {
-    return apiRequest('/auth/verify');
+    return apiRequest('/api/auth/verify');
   }
 };
 
 // About API
 export const aboutAPI = {
   get: async () => {
-    return apiRequest('/about');
+    return apiRequest('/api/about');
   },
   
   update: async (data) => {
-    return apiRequest('/about', {
+    return apiRequest('/api/about', {
       method: 'PUT',
       body: JSON.stringify(data)
     });
@@ -61,25 +61,25 @@ export const aboutAPI = {
 // Skills API
 export const skillsAPI = {
   getAll: async () => {
-    return apiRequest('/skills');
+    return apiRequest('/api/skills');
   },
   
   create: async (data) => {
-    return apiRequest('/skills', {
+    return apiRequest('/api/skills', {
       method: 'POST',
       body: JSON.stringify(data)
     });
   },
   
   update: async (id, data) => {
-    return apiRequest(`/skills/${id}`, {
+    return apiRequest(`/api/skills/${id}`, {
       method: 'PUT',
       body: JSON.stringify(data)
     });
   },
   
   delete: async (id) => {
-    return apiRequest(`/skills/${id}`, {
+    return apiRequest(`/api/skills/${id}`, {
       method: 'DELETE'
     });
   }
@@ -88,29 +88,29 @@ export const skillsAPI = {
 // Projects API
 export const projectsAPI = {
   getAll: async () => {
-    return apiRequest('/projects');
+    return apiRequest('/api/projects');
   },
   
   getById: async (id) => {
-    return apiRequest(`/projects/${id}`);
+    return apiRequest(`/api/projects/${id}`);
   },
   
   create: async (data) => {
-    return apiRequest('/projects', {
+    return apiRequest('/api/projects', {
       method: 'POST',
       body: JSON.stringify(data)
     });
   },
   
   update: async (id, data) => {
-    return apiRequest(`/projects/${id}`, {
+    return apiRequest(`/api/projects/${id}`, {
       method: 'PUT',
       body: JSON.stringify(data)
     });
   },
   
   delete: async (id) => {
-    return apiRequest(`/projects/${id}`, {
+    return apiRequest(`/api/projects/${id}`, {
       method: 'DELETE'
     });
   }
@@ -119,25 +119,25 @@ export const projectsAPI = {
 // Contact API
 export const contactAPI = {
   create: async (data) => {
-    return apiRequest('/contact', {
+    return apiRequest('/api/contact', {
       method: 'POST',
       body: JSON.stringify(data)
     });
   },
   
   getAll: async () => {
-    return apiRequest('/contact');
+    return apiRequest('/api/contact');
   },
   
   update: async (id, data) => {
-    return apiRequest(`/contact/${id}`, {
+    return apiRequest(`/api/contact/${id}`, {
       method: 'PUT',
       body: JSON.stringify(data)
     });
   },
   
   delete: async (id) => {
-    return apiRequest(`/contact/${id}`, {
+    return apiRequest(`/api/contact/${id}`, {
       method: 'DELETE'
     });
   }
